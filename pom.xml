@@ -23,7 +23,8 @@
     <modules>
         <module>spring-cloud-eureka/spring-cloud-eureka</module>
         <module>spring-cloud-eureka/spring-cloud-eureka-two</module>
-        <module>spring-hello-service</module>
+        <module>spring-service-producer</module>
+        <module>spring-service-consumer</module>
     </modules>
 
     <dependencyManagement>
