@@ -4,6 +4,7 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -19,10 +20,14 @@ public class ConsumerController {
     private EurekaClient discoveryClient;
 
     @Autowired
+    @LoadBalanced
     private RestTemplate restTemplate;
+
+    // 服务名字
+    public static final String SERVICE_HELLO_BASE_URL = "http://hello-service";
 
     @GetMapping
     public String index(){
-        return restTemplate.getForEntity("http://hello-service/", String.class).getBody();
+        return restTemplate.getForEntity(SERVICE_HELLO_BASE_URL, String.class).getBody();
     }
 }

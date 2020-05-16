@@ -22,12 +22,17 @@ public class HelloController {
 
     @Qualifier("eurekaClient")
     @Autowired
-    private EurekaClient eurekaClient;
+    private EurekaClient discoveryClient;
 
     @GetMapping
     public String index(){
-        ApplicationInfoManager infoManager = eurekaClient.getApplicationInfoManager();
+        ApplicationInfoManager infoManager = discoveryClient.getApplicationInfoManager();
         logger.info("/hello, host:{}, servid_id:{}", infoManager.getInfo().getIPAddr(), infoManager.getInfo().getInstanceId());
         return "hello world";
+    }
+
+    @GetMapping("/hello")
+    public String hello(String name){
+        return "hello " + name + " from producer";
     }
 }

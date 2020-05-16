@@ -1,11 +1,16 @@
 spring:
   application:
     name: hello-consomer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
 eureka:
   client:
     healthcheck:
       enabled: true
     service-url:
       defaultZone: http://localhost:1111/eureka/
+    enabled: true
 server:
-  port: 8081
+  port: ${random.int}
