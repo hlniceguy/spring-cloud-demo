@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: hello-feign-consomer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+  http:
+    log-request-details: true
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+    enabled: true
+server:
+  port: 0
+feign:
+  hystrix:
+    enabled: true
+hello-service:
+  ribbon:
+    ## 针对 hello-service 服务，重试切换的实例数
+    MaxAutoRetriesNextServer: 1
+    ## 针对 hello-service 服务，对当前实例重试次数
+    MaxAutoRetries: 0

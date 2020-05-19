@@ -13,4 +13,4 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
     enabled: true
 server:
-  port: ${random.int}
+  port: 0

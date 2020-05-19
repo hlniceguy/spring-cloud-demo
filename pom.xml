@@ -25,6 +25,8 @@
         <module>spring-cloud-eureka/spring-cloud-eureka-two</module>
         <module>spring-service-producer</module>
         <module>spring-service-consumer</module>
+        <module>spring-service-feign-consumer</module>
+        <module>hello-service-api</module>
     </modules>
 
     <dependencyManagement>

@@ -8,4 +8,4 @@ eureka:
     service-url:
       defaultZone: http://localhost:1111/eureka/
 server:
-  port: ${random.int}
+  port: 0
