@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway-zuul
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+    enabled: true
+zuul:
+  routes:
+    api-a:
+      path: /api-a/*
+      serviceId: hello-service
+    api-b:
+      path: /api-b/*
+      serviceId: hello-feign-consomer
+server:
+  port: 0
