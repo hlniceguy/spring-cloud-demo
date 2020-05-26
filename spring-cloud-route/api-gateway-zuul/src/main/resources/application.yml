@@ -10,11 +10,32 @@ eureka:
     enabled: true
 zuul:
   routes:
-    api-a:
-      path: /api-a/*
+    hello-service:
+      path: /api-a/**
       serviceId: hello-service
-    api-b:
-      path: /api-b/*
+    hello-feign-consomer:
+      path: /api-b/**
       serviceId: hello-feign-consomer
+    api-c:
+      path: /api-c/**
+      url: forward:/api-a
+  ignored-services: '*'
 server:
   port: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#zuul:
+#  routes:
+#    hello-service:
+#      path: /api-a/**
+#      serviceId: hello-service
+#      url: http://localhost:8080/
+#hello-service:
+#  ribbon:
+#    listOfServers: http://localhost:8080/,http://localhost:8081/
+logging:
+  level:
+    root: debug
