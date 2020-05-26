@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloServiceFallback implements HelloRefactorService {
     @Override
     public String hello(String name) {
-        return "error";
+        return "error from fallback";
     }
 }

@@ -2,6 +2,7 @@ package com.study.api;
 
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -26,8 +27,13 @@ public class ConsumerController {
     // 服务名字
     public static final String SERVICE_HELLO_BASE_URL = "http://hello-service";
 
+    @HystrixCommand(fallbackMethod = "helloFallback")
     @GetMapping
     public String index(){
         return restTemplate.getForEntity(SERVICE_HELLO_BASE_URL, String.class).getBody();
+    }
+
+    public String helloFallback(){
+        return "hello fallback";
     }
 }

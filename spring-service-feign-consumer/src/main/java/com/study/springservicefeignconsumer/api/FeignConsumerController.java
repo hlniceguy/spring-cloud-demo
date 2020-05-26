@@ -25,7 +25,7 @@ public class FeignConsumerController {
 //        return helloService.hello("Feign Consumer");
 //    }
 
-    @GetMapping("refactor")
+    @GetMapping
     public String helloRefactorConsumer(){
         return helloRefactorService.hello("Feign Consumer");
     }

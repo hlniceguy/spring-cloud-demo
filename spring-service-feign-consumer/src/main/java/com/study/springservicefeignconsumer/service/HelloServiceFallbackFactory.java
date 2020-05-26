@@ -15,7 +15,7 @@ public class HelloServiceFallbackFactory implements FallbackFactory<HelloRefacto
         return new HelloRefactorService() {
             @Override
             public String hello(String name) {
-                return "error";
+                return "error from fallback factory";
             }
         };
     }

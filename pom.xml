@@ -28,6 +28,7 @@
         <module>spring-service-feign-consumer</module>
         <module>hello-service-api</module>
         <module>spring-cloud-route/api-gateway-zuul</module>
+        <module>dashboard/hystrix-dashboard</module>
     </modules>
 
     <dependencyManagement>
