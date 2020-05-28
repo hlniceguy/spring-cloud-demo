@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - PrefixPath=/hello-service
+        - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+      routes:
+        - id: hello-service
+          uri:

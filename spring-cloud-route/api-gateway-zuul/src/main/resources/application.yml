@@ -36,6 +36,6 @@ management:
 #hello-service:
 #  ribbon:
 #    listOfServers: http://localhost:8080/,http://localhost:8081/
-logging:
-  level:
-    root: debug
+#logging:
+#  level:
+#    root: debug

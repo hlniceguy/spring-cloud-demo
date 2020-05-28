@@ -70,6 +70,7 @@ public class AccessFilter extends ZuulFilter {
             ctx.setResponseStatusCode(401);
             return null;
         }
+
         logger.info("access token ok");
         return null;
 
