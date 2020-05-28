@@ -21,7 +21,7 @@ zuul:
       url: forward:/api-a
   ignored-services: '*'
 server:
-  port: 0
+  port: 9000
 management:
   endpoints:
     web:
