@@ -6,4 +6,10 @@ spring:
         - AddResponseHeader=X-Response-Default-Foo, Default-Bar
       routes:
         - id: hello-service
-          uri:
+          uri: http://localhost:8080
+          predicates:
+            - Path=/hello
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.loadbalancer: TRACE

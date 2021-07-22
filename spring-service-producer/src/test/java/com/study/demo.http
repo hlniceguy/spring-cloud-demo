@@ -1,0 +1,17 @@
+
+###
+GET http://localhost:61331/test1?name=abc&age=100
+Accept: application/json
+
+###
+
+GET http://localhost:61331/test2?name=abc&age=100
+Accept: application/json
+
+
+###
+
+GET http://localhost:61331/test3?name=abc&age=100
+Accept: application/json
+
+###
